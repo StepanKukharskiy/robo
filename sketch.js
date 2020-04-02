@@ -71,7 +71,7 @@ function setup() {
 
   GridState();
   Grid();
-  Go();
+  Go2();
 
 
   font = width / 50;
