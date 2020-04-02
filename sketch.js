@@ -13,15 +13,7 @@ let doGo; //a variable for a function to make robot walk the routeArray
 let doAlert;
 
 let font;
-//let meteorVisible;
 
-// //buttons to control robot
-// let buttonGo;
-// let buttonRight;
-// let buttonLeft;
-// let buttonUp;
-// let buttonDown;
-// let buttonRemove;
 
 //robot, different ground variables, obstacle, etc.
 let robot, ground1, ground2, obstacle, meteor, roboAlert, btnRight, btnLeft, btnUp, btnDown, btnRemove, btnGo;
@@ -266,7 +258,7 @@ function Go2() {
   for (var j = 0; j < meteoX.length; j++) {
     //console.log(Math.floor(xPos[counter]), Math.floor(yPos[counter]), Math.floor(meteoX[j] * size), Math.floor(meteoY[j] * size));
     if (Math.floor(xPos[counter]) === Math.floor(meteoX[j] * size) && Math.floor(yPos[counter]) === Math.floor(meteoY[j] * size)) {
-      interval = 5000;
+      interval = 10000;
       alertMeteo(j);
     }
 
