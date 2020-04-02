@@ -1,0 +1,43 @@
+html,
+body {
+  background-color: rgb(240, 240, 240);
+  margin: 0;
+  padding: 0;
+  font-family: Trebuchet MS;
+}
+
+canvas {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  display: block;
+  box-shadow:  10px 10px 20px 5px rgba(200,200,200,50);
+}
+
+h1 {
+  text-align: left;
+}
+
+p {
+ text-align: justify; 
+}
+
+.scriptBox{
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 10px;
+  
+  margin-left:auto;
+  
+}
+
+.footer{
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 50px;
+  padding-bottom: 5px;
+  color: rgb(200, 200, 200);
+  margin-left:auto;
+  margin-bottom: 0;
+}
