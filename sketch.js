@@ -8,7 +8,7 @@ let yPos = [0]; //y position of a robot
 let routeArray = []; //array describing the programmed route
 let Go2TimerID;
 let interval = 500;
-
+let counter = 0;
 let doGo; //a variable for a function to make robot walk the routeArray
 let doAlert;
 
