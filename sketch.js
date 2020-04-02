@@ -183,48 +183,6 @@ function Grid() {
 }
 
 //function to make the robot move
-function Go() {
-  clearGo();
-  counter = 0;
-  meteoCount = 0;
-
-
-  doGo = setInterval(function() {
-    Grid();
-    Obstacles();
-    Meteors();
-
-    image(roboBase, 0, 0, size, size);
-
-    image(robot, xPos[counter] + size * 0.05, yPos[counter] + size * 0.05, size - size * 0.1, size - size * 0.1);
-
-    for (var i = 0; i < obstacleX.length; i++) {
-      if (xPos[counter] === obstacleX[i] * size && yPos[counter] === obstacleY[i] * size || xPos[counter] < 0 || xPos[counter] > width || yPos[counter] < 0 || yPos[counter] > height) {
-        alertRock();
-        return;
-      }
-    }
-    //console.log(meteoX, meteoY, xPos, yPos); 
-    for (var j = 0; j < meteoX.length; j++) {
-      //console.log(Math.floor(meteoX[j]*size),Math.floor(meteoY[j]*size), Math.floor(xPos[counter]), Math.floor(yPos[counter]));
-      if (Math.floor(xPos[counter]) === Math.floor(meteoX[j] * size) && Math.floor(yPos[counter]) === Math.floor(meteoY[j] * size)) {
-        alertMeteo(j);
-      }
-    }
-    counter++;
-    if (counter === yPos.length) {
-      counter = counter - 1;
-      clearInterval(doGo);
-    }
-    if (meteoCount === 3 && xPos[counter] === 0 && yPos[counter] === 0) {
-      final();
-    }
-
-  }, interval);
-
-}
-
-
 function Go2() {
 
   //counter = 0;
@@ -239,7 +197,7 @@ function Go2() {
 
   counter++;
 
-  image(robot, xPos[counter] + size * 0.05, yPos[counter] + size * 0.05, size - size * 0.1, size - size * 0.1);
+  image(robot, xPos[counter] + size * 0.1, yPos[counter] + size * 0.1, size - size * 0.2, size - size * 0.2);
 
   if (counter >= yPos.length) {
     counter = counter - 1;
@@ -249,7 +207,7 @@ function Go2() {
 
   for (var i = 0; i < obstacleX.length; i++) {
 
-    if (xPos[counter] === obstacleX[i] * size && yPos[counter] === obstacleY[i] * size || xPos[counter] < 0 || xPos[counter] > width || yPos[counter] < 0 || yPos[counter] > height) {
+    if (xPos[counter] === obstacleX[i] * size && yPos[counter] === obstacleY[i] * size || xPos[counter] < 0 || xPos[counter] > width-2*size || yPos[counter] < 0 || yPos[counter] > height-2*size) {
       alertRock();
       return;
     }
