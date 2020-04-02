@@ -1,3 +1,4 @@
+let counter = 0;
 let roboBase; //start block for ROBO
 let randomNumbersArrayX = [];
 let randomNumbersArrayY = [];
@@ -8,12 +9,11 @@ let yPos = [0]; //y position of a robot
 let routeArray = []; //array describing the programmed route
 let Go2TimerID;
 let interval = 500;
-let counter = 0;
+
 let doGo; //a variable for a function to make robot walk the routeArray
 let doAlert;
 
 let font;
-
 
 //robot, different ground variables, obstacle, etc.
 let robot, ground1, ground2, obstacle, meteor, roboAlert, btnRight, btnLeft, btnUp, btnDown, btnRemove, btnGo;
@@ -69,8 +69,13 @@ function setup() {
   randomNumbersX();
   randomNumbersY();
 
+  
   GridState();
   Grid();
+
+  //image(roboBase, 0, 0, size, size);
+  //image(robot, xPos[counter] + size * 0.05, yPos[counter] + size * 0.05, size - size * 0.1, size - size * 0.1);
+  //
   Go2();
 
 
@@ -110,14 +115,16 @@ function setup() {
   Obstacles();
   mouseReleased();
   //console.log(meteoFactsArray.length);
+  Meteors();
 
 }
 
 function draw() {
   if (meteoCount === 3 && xPos[counter] === 0 && yPos[counter] === 0) {
-      return;
-    }
+    return;
+  }
   route();
+  //image(robot, xPos[counter] + size * 0.05, yPos[counter] + size * 0.05, size - size * 0.1, size - size * 0.1);
 }
 
 //move robot right
@@ -184,30 +191,32 @@ function Grid() {
 
 //function to make the robot move
 function Go2() {
-
+  
   //counter = 0;
   interval = 500;
-
-
+  
+  
   Grid();
   Obstacles();
   Meteors();
 
   image(roboBase, 0, 0, size, size);
+  //counter++;
 
-  counter++;
+  image(robot, xPos[counter] + size * 0.05, yPos[counter] + size * 0.05, size - size * 0.1, size - size * 0.1);
 
-  image(robot, xPos[counter] + size * 0.1, yPos[counter] + size * 0.1, size - size * 0.2, size - size * 0.2);
+
+counter++;
 
   if (counter >= yPos.length) {
-    counter = counter - 1;
+    counter = yPos.length - 1;
     return;
   }
 
 
   for (var i = 0; i < obstacleX.length; i++) {
 
-    if (xPos[counter] === obstacleX[i] * size && yPos[counter] === obstacleY[i] * size || xPos[counter] < 0 || xPos[counter] > width-2*size || yPos[counter] < 0 || yPos[counter] > height-2*size) {
+    if (xPos[counter] === obstacleX[i] * size && yPos[counter] === obstacleY[i] * size || xPos[counter] < 0 || xPos[counter] >= width - 2 * size || yPos[counter] < 0 || yPos[counter] >= height - 2 * size) {
       alertRock();
       return;
     }
@@ -216,7 +225,8 @@ function Go2() {
   for (var j = 0; j < meteoX.length; j++) {
     //console.log(Math.floor(xPos[counter]), Math.floor(yPos[counter]), Math.floor(meteoX[j] * size), Math.floor(meteoY[j] * size));
     if (Math.floor(xPos[counter]) === Math.floor(meteoX[j] * size) && Math.floor(yPos[counter]) === Math.floor(meteoY[j] * size)) {
-      interval = 10000;
+      interval = 5000;
+      
       alertMeteo(j);
     }
 
@@ -224,9 +234,18 @@ function Go2() {
       final();
       return;
     }
+
   }
 
-  Go2TimerID = setTimeout(Go2, interval);
+
+  console.log(counter, xPos[counter], yPos.length);
+  
+
+  
+
+  //image(robot, xPos[counter] + size * 0.05, yPos[counter] + size * 0.05, size - size * 0.1, size - size * 0.1);
+
+    Go2TimerID = setTimeout(Go2, interval);
 }
 
 
@@ -257,8 +276,8 @@ function route() {
     }
   }
   if (meteoCount === 3 && xPos[counter] === 0 && yPos[counter] === 0) {
-      return;
-    }
+    return;
+  }
 }
 
 function Obstacles() {
@@ -271,26 +290,38 @@ function mouseReleased() {
   fill(230);
   image(btnRight, width - 2 * size, 0, size * 2, size);
   if (mouseX < width && mouseX > width - 2 * size && mouseY > 0 && mouseY < size) {
+    fill(200, 50);
+    rect(width-2*size, 0, 2*size, size);
     Right();
   }
   image(btnLeft, width - 2 * size, size, size * 2, size);
   if (mouseX < width && mouseX > width - 2 * size && mouseY > size && mouseY < size * 2) {
+    fill(200, 50);
+    rect(width-2*size, size, 2*size, size);
     Left();
   }
   image(btnUp, width - 2 * size, size * 2, size * 2, size);
   if (mouseX < width && mouseX > width - 2 * size && mouseY > size * 2 && mouseY < size * 3) {
+    fill(200, 50);
+    rect(width-2*size, 2*size, 2*size, size);
     Up();
   }
   image(btnDown, width - 2 * size, size * 3, size * 2, size);
   if (mouseX < width && mouseX > width - 2 * size && mouseY > size * 3 && mouseY < size * 4) {
+    fill(200, 50);
+    rect(width-2*size, 3*size, 2*size, size);
     Down();
   }
   image(btnRemove, width - 2 * size, size * 4, size * 2, size);
   if (mouseX < width && mouseX > width - 2 * size && mouseY > size * 4 && mouseY < size * 5) {
+    fill(200, 50);
+    rect(width-2*size, 4*size, 2*size, size);
     Remove();
   }
   image(btnGo, width - 2 * size, size * 5, size * 2, size);
   if (mouseX < width && mouseX > width - 2 * size && mouseY > size * 5 && mouseY < size * 6) {
+    fill(200, 50);
+    rect(width-2*size, 5*size, 2*size, size);
     clearTimeout(Go2TimerID);
     counter = 0;
     meteoCount = 0;
