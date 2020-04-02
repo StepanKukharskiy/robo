@@ -39,24 +39,24 @@ let finalImage; //a message in the end of the game
 
 //preload images
 function preload() {
-  robot = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robot/master/robo_1.png');
-  ground1 = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robot/master/ground_1.png');
-  ground2 = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robot/master/ground_2.png');
-  roboBase = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robot/master/robo_base.png');
+  robot = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robo/master/robo_1.png');
+  ground1 = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robo/master/ground_1.png');
+  ground2 = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robo/master/ground_2.png');
+  roboBase = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robo/master/robo_base.png');
 
-  obstacle = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robot/master/rock.png');
-  btnRight = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robot/master/DDC8CF8F-AD81-49BA-8A00-0265D946F87E.png');
-  btnLeft = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robot/master/85C781B3-0AC6-4BB7-BA61-F5DBB06A415A.png');
-  btnUp = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robot/master/CA40FDF9-8FF4-4935-985A-14C3C86D72D6.png');
-  btnDown = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robot/master/E0ABC246-156F-425B-8963-A9C5F421B511.png');
-  btnRemove = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robot/master/286BFEBD-36EA-43D3-A9E3-3AF543BE3AEB.png');
-  btnGo = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robot/master/C92AE74D-CCF6-43E7-A53F-7793B83F20B4.png');
-  roboAlert = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robot/master/robo_alert.png');
-  meteor = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robot/master/meteo.png');
-  meteoFact1 = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robot/master/meteo_alert_1.png');
-  meteoFact2 = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robot/master/meteo_alert_2.png');
-  meteoFact3 = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robot/master/meteo_alert_3.png');
-  finalImage = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robot/master/fin.png');
+  obstacle = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robo/master/rock.png');
+  btnRight = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robo/master/DDC8CF8F-AD81-49BA-8A00-0265D946F87E.png');
+  btnLeft = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robo/master/85C781B3-0AC6-4BB7-BA61-F5DBB06A415A.png');
+  btnUp = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robo/master/CA40FDF9-8FF4-4935-985A-14C3C86D72D6.png');
+  btnDown = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robo/master/E0ABC246-156F-425B-8963-A9C5F421B511.png');
+  btnRemove = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robo/master/286BFEBD-36EA-43D3-A9E3-3AF543BE3AEB.png');
+  btnGo = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robo/master/C92AE74D-CCF6-43E7-A53F-7793B83F20B4.png');
+  roboAlert = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robo/master/robo_alert.png');
+  meteor = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robo/master/meteo.png');
+  meteoFact1 = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robo/master/meteo_alert_1.png');
+  meteoFact2 = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robo/master/meteo_alert_2.png');
+  meteoFact3 = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robo/master/meteo_alert_3.png');
+  finalImage = loadImage('https://raw.githubusercontent.com/StepanKukharskiy/robo/master/fin.png');
 
 }
 
