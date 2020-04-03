@@ -367,8 +367,11 @@ function randomNumbersY() {
 }
 
 function final() {
-
+  Grid();
+  Obstacles();
+  Meteors();
+  image(robot, xPos[0] + size * 0.05, yPos[0] + size * 0.05, size - size * 0.1, size - size * 0.1);
+  
   image(finalImage, size, size, width - size * 4, height - size * 4);
-
   return;
 }
