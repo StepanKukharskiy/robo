@@ -225,7 +225,7 @@ counter++;
   for (var j = 0; j < meteoX.length; j++) {
     //console.log(Math.floor(xPos[counter]), Math.floor(yPos[counter]), Math.floor(meteoX[j] * size), Math.floor(meteoY[j] * size));
     if (Math.floor(xPos[counter]) === Math.floor(meteoX[j] * size) && Math.floor(yPos[counter]) === Math.floor(meteoY[j] * size)) {
-      interval = 5000;
+      interval = 15000;
       
       alertMeteo(j);
     }
