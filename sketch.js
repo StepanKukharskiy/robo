@@ -1,3 +1,4 @@
+(function(){
 let counter = 0;
 let roboBase; //start block for ROBO
 let randomNumbersArrayX = [];
@@ -375,3 +376,5 @@ function final() {
   image(finalImage, size, size, width - size * 4, height - size * 4);
   return;
 }
+
+}())
