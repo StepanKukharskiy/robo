@@ -1,4 +1,4 @@
-(function(){
+
 let counter = 0;
 let roboBase; //start block for ROBO
 let randomNumbersArrayX = [];
@@ -377,4 +377,3 @@ function final() {
   return;
 }
 
-})();
