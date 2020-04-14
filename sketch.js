@@ -55,15 +55,15 @@ function preload() {
 
 
 function setup() {
-  var canvasWidth = screen.width * 0.8;
+  var canvasWidth = document.documentElement.clientWidth;
 
-  if (screen.width * 0.8 > 1000) {
+  if (canvasWidth * 0.8 > 1000) {
     canvasWidth = 800;
   }
 
-  size = canvasWidth / 10;
+  size = canvasWidth*0.8 / 10;
 
-  var c = createCanvas(canvasWidth, canvasWidth);
+  var c = createCanvas(canvasWidth*0.8, canvasWidth*0.8);
   c.parent('sketch-holder');
   background(254);
 
